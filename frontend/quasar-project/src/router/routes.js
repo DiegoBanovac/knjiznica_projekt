@@ -14,6 +14,13 @@ const routes = [
     ]
   },
   {
+    path: '/popisKnjigaBaza',  
+    component: () => import('layouts/MainLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/PopisKnjigaBaza.vue') }  
+    ]
+  },
+  {
     path: '/pretrazivanje',  
     component: () => import('layouts/TraziKnjiguLayout.vue'),  
     children: [
@@ -48,7 +55,13 @@ const routes = [
       { path: '', component: () => import('pages/RegistracijaPage.vue') }  
     ]
   },
-  
+  {
+    path: '/rezervacije',  
+    component: () => import('layouts/MainLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/RezervacijePage.vue') }  
+    ]
+  },
 ];
 
 

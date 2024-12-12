@@ -5,7 +5,7 @@ const mysql = require("mysql");
 
 const app = express();
 const port = 3000;
-
+app.use(cors());
 // Parser za JSON podatke
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -242,6 +242,22 @@ app.post("/api/rezervacija/vrati", (request, response) => {
           response.send({ message: "Rezervacija vraćena i arhivirana.", affectedRows: delResults.affectedRows });
         }
       );
+    }
+  );
+});
+app.get("/api/rezervirane_knjige", (request, response) => {
+  connection.query(
+    `SELECT 
+      knjiga.naslov, 
+      knjiga.autor, 
+      CONCAT(korisnik.ime, ' ', korisnik.prezime) AS korisnik, 
+      rezervacija.datum_rez 
+      FROM rezervacija
+      JOIN knjiga ON rezervacija.knjiga = knjiga.id
+      JOIN korisnik ON rezervacija.korisnik = korisnik.id`,
+    (error, results) => {
+      if (error) throw error;
+      response.send(results);
     }
   );
 });
