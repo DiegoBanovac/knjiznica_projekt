@@ -262,6 +262,19 @@ app.get("/api/rezervirane_knjige", (request, response) => {
   );
 });
 
+app.post("/api/unos_knjige", (req,res) => {
+  const data = req.body;
+  knjiga=[[data.naslov,data.autor,data.opis,data.slika,data.stanje]]
+  connection.query("INSERT INTO knjiga (naslov,autor,opis,slika,stanje) VALUES ?",
+    [knjiga], (error, results) => {
+      if (error) throw error;
+      res.send(results);
+    }
+  );
+});
+
+
+
 // Pokretanje servera
 app.listen(port, () => {
   console.log("Server running at port: " + port);

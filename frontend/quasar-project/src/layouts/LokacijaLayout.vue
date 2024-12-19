@@ -62,12 +62,6 @@ const linksList = [
   },
   {
     title: 'Popis knjiga',
-    caption: 'Popis svih kjniga',
-    icon: 'book',
-    link: '#/popisKnjiga'
-  },
-  {
-    title: 'Popis knjiga baza',
     caption: 'Popis svih knjiga',
     icon: 'book',
     link: '#/popisKnjigaBaza'

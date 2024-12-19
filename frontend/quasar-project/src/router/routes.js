@@ -7,13 +7,6 @@ const routes = [
     ]
   },
   {
-    path: '/popisKnjiga',  
-    component: () => import('layouts/PopisKnjigaLayout.vue'),  
-    children: [
-      { path: '', component: () => import('pages/PopisKnjigaPage.vue') }  
-    ]
-  },
-  {
     path: '/popisKnjigaBaza',  
     component: () => import('layouts/MainLayout.vue'),  
     children: [
@@ -62,6 +55,50 @@ const routes = [
       { path: '', component: () => import('pages/RezervacijePage.vue') }  
     ]
   },
+  //ADMIN
+  {
+    path: '/admin',
+    component: () => import('layouts/AdminLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/IndexPage.vue') },
+    ]
+  },
+  {
+    path: '/admin/popisKnjigaBaza',  
+    component: () => import('layouts/AdminLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/PopisKnjigaBaza.vue') }  
+    ]
+  },
+  {
+    path: '/admin/pretrazivanje',  
+    component: () => import('layouts/AdminTraziKnjiguLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/TraziKnjiguPage.vue') }  
+    ]
+  },
+  {
+    path: '/admin/popis_korisnika',  
+    component: () => import('layouts/AdminLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/PopisKorisnikaPage.vue') } 
+    ]
+  },
+  {
+    path: '/admin/unos_knjiga',  
+    component: () => import('layouts/AdminLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/UnosKnjigaPage.vue') }  
+    ]
+  },
+  {
+    path: '/logout',  
+    component: () => import('layouts/AdminLayout.vue'),  
+    children: [
+      { path: '', component: () => import('pages/LogoutPage.vue') }  
+    ]
+  },
+
 ];
 
 

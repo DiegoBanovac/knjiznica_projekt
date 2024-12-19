@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Registracija
+          Trazi knjigu (admin)
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -50,59 +50,47 @@ import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 defineOptions({
-  name: 'RegistracijaLayout'
+  name: 'AdminTraziKnjiguLayout'
 })
 
 const linksList = [
-  {
-    title: 'Pocetna stranica',
-    caption: 'Pocetna stranica',
-    icon: 'home',
-    link: '#/'
-  },
-  {
-    title: 'Popis knjiga',
-    caption: 'Popis svih knjiga',
-    icon: 'book',
-    link: '#/popisKnjigaBaza'
-  },
-  {
-    title: 'Pretrazivanje',
-    caption: 'Trazilica',
-    icon: 'search',
-    link: '#/pretrazivanje'
-  },
-  {
-    title: 'O nama',
-    caption: 'Kratak opis o knjiznici',
-    icon: 'record_voice_over',
-    link: '#/o_nama'
-  },
-  {
-    title: 'Lokacija',
-    caption: 'Lokacija knjiznice',
-    icon: 'map',
-    link: '#/lokacija'
-  },
-  {
-    title: 'Login',
-    caption: 'Prijava u sustav',
-    icon: 'public',
-    link: '#/login'
-  },
-  {
-    title: 'Registracija',
-    caption: 'Registracija u sustav',
-    icon: 'favorite',
-    link: '#/registracija'
-  },
-  {
-    title: 'Rezervacije',
-    caption: 'Popis rezerviranih knjiga',
-    icon: 'favorite',
-    link: '#/rezervacije'
-  }
-]
+    {
+      title: 'Pocetna stranica',
+      caption: 'Pocetna stranica',
+      icon: 'home',
+      link: '#/admin'
+    },
+    {
+      title: 'Popis knjiga',
+      caption: 'Popis svih knjiga u bazi',
+      icon: 'book',
+      link: '#/admin/popisKnjigaBaza'
+    },
+    {
+      title: 'Pretrazivanje',
+      caption: 'Trazilica',
+      icon: 'search',
+      link: '#/admin/pretrazivanje'
+    },
+    {
+      title: 'Popis korisnika',
+      caption: 'Lista korisnika u knjiznici',
+      icon: 'admin_panel_settings',
+      link: '#/admin/popis_korisnika'
+    },
+    {
+      title: 'Unos knjiga',
+      caption: 'Unos knjige u sustav',
+      icon: 'import_contacts',
+      link: '#/admin/unos_knjiga'
+    },
+    {
+      title: 'Logout',
+      caption: 'Odjava iz sustava',
+      icon: 'logout',
+      link: '#/logout'
+    },
+  ]
 
 const leftDrawerOpen = ref(false)
 
